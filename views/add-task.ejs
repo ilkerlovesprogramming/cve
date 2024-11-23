@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Task</title>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+    }
+    select {
+      width: 100%;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Add New Task</h1>
+    <form action="/add-task" method="POST">
+      
+      <!-- Task Prompt Input -->
+      <div class="form-group">
+        <label for="prompt">Task Prompt</label>
+        <textarea name="prompt" id="prompt" rows="4" class="form-control" required></textarea>
+      </div>
+      
+      <!-- Device Selection -->
+      <div class="form-group">
+        <label for="devices">Select Targeted Devices</label>
+        <select name="devices[]" id="devices" class="form-control" multiple="multiple" required>
+          <!-- Devices will be dynamically loaded here -->
+        </select>
+      </div>
+      
+      <!-- Submit Button -->
+      <button type="submit">Add Task</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Initialize Select2 on the devices select input to enable search and multi-selection
+      $('#devices').select2({
+        placeholder: 'Select devices...',
+        allowClear: true
+      });
+
+      // Fetch devices from the /getAllDevices API
+      $.get('/getAllDevices', function(devices) {
+        // Clear existing options (if any)
+        $('#devices').empty();
+
+        // Populate the select box with devices
+        devices.forEach(device => {
+          // Assuming the device object structure is as you described:
+          const deviceName = device.value.browserDetails.platform + ' - ' + device.value.uuid;  // Customize how you want to display each device
+          const deviceUUID = device.value.uuid;
+          
+          // Create a new option element and append it to the select dropdown
+          $('#devices').append(new Option(deviceName, deviceUUID));
+        });
+        
+        // Re-initialize Select2 to apply to newly added options
+        $('#devices').trigger('change');
+      }).fail(function() {
+        alert('Failed to fetch devices.');
+      });
+    });
+  </script>
+
+</body>
+</html>

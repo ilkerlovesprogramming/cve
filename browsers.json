@@ -1,0 +1,73 @@
+[
+    {
+      "txtName": "chrome",
+      "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "processName": "chrome.exe"
+    },
+    {
+      "txtName": "chrome2",
+      "path": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+      "processName": "chrome.exe"
+    },
+    {
+      "txtName": "edge",
+      "path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "processName": "msedge.exe"
+    },
+    {
+      "txtName": "edge2",
+      "path": "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
+      "processName": "msedge.exe"
+    },
+    {
+      "txtName": "opera",
+      "path": "C:\\Users\\$env:USERNAME\\AppData\\Local\\Programs\\Opera\\launcher.exe",
+      "processName": "launcher.exe"
+    },
+    {
+      "txtName": "brave",
+      "path": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+      "processName": "brave.exe"
+    },
+    {
+      "txtName": "brave2",
+      "path": "C:\\Program Files (x86)\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+      "processName": "brave.exe"
+    },
+    {
+      "txtName": "vivaldi",
+      "path": "C:\\Program Files\\Vivaldi\\Application\\vivaldi.exe",
+      "processName": "vivaldi.exe"
+    },
+    {
+      "txtName": "vivaldi2",
+      "path": "C:\\Program Files (x86)\\Vivaldi\\Application\\vivaldi.exe",
+      "processName": "vivaldi.exe"
+    },
+    {
+      "txtName": "yandex",
+      "path": "C:\\Users\\$env:USERNAME\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe",
+      "processName": "browser.exe"
+    },
+    {
+      "txtName": "slimjet",
+      "path": "C:\\Program Files\\Slimjet\\slimjet.exe",
+      "processName": "slimjet.exe"
+    },
+    {
+      "txtName": "slimjet2",
+      "path": "C:\\Program Files (x86)\\Slimjet\\slimjet.exe",
+      "processName": "slimjet.exe"
+    },
+    {
+      "txtName": "iridium",
+      "path": "C:\\Program Files\\Iridium\\iridium.exe",
+      "processName": "iridium.exe"
+    },
+    {
+      "txtName": "ungoogled_chromium",
+      "path": "C:\\Program Files\\Ungoogled Chromium\\Application\\chromium.exe",
+      "processName": "chromium.exe"
+    }
+  ]
+  
